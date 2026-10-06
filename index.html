@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pravin A — Full Stack & AI/ML Developer</title>
+<meta name="description" content="Portfolio of Pravin A, a Computer Science student building full stack, machine learning and cybersecurity projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="is-loading">
+<div class="loader" id="loader" aria-hidden="true"><span class="loader__name" data-bind="name"></span><span class="loader__pct" id="pct">00%</span></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#home" data-bind="name" aria-label="Home"></a>
+  <ul class="nav__social" id="navSocial"></ul>
+  <div class="nav__right">
+    <a class="btn btn--dark" id="cvBtn" download>Download CV</a>
+    <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor"><rect width="7" height="7"/><rect x="11" width="7" height="7"/><rect y="11" width="7" height="7"/><rect x="11" y="11" width="7" height="7"/></svg></button>
+  </div>
+</header>
+
+<nav class="menu" id="menu" aria-label="Main menu" hidden>
+  <ul id="menuLinks"><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#works">Works</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul>
+  <ul class="menu__social" id="menuSocial"></ul>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <h1 class="hero__title" aria-label="Developer" id="heroTitle">DEVELOPER</h1>
+  <figure class="hero__photo" data-depth="10"><img src="assets/images/portrait.jpg" alt="Portrait of Pravin A" width="1000" height="1778" fetchpriority="high"></figure>
+  <div class="stat stat--light hero__stat1" data-depth="4"><b data-bind="stat0v"></b><span data-bind="stat0l"></span></div>
+  <div class="stat stat--dark hero__stat2" data-depth="4"><b data-bind="stat1v"></b><span data-bind="stat1l"></span></div>
+  <p class="hero__meta"><span data-bind="role"></span><span data-bind="location"></span></p>
+</section>
+
+<section class="intro" id="about">
+  <p class="intro__text" id="introText"></p>
+  <div class="intro__grid">
+    <figure class="clip-img"><img src="assets/images/about.jpg" alt="Pravin A at a desk by a window" loading="lazy"></figure>
+    <div>
+      <div class="ring"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="90" class="ring__bg"/><circle cx="100" cy="100" r="90" class="ring__fg" id="ringFg"/></svg>
+        <div class="ring__num"><b id="internshipCount" data-count="0">0</b><span>internships</span></div></div>
+      <div id="aboutText" class="about-copy"></div>
+      <ul class="stats" id="statsList"></ul>
+    </div>
+  </div>
+  <ol class="timeline" id="timeline"></ol>
+</section>
+
+<section class="services" id="services">
+  <div class="marquee marquee--big" aria-hidden="true"><div class="marquee__track" id="svcMarquee"></div></div>
+  <h2 class="sr-only">Services</h2>
+  <ul class="svc-list" id="svcList"></ul>
+</section>
+
+<section class="works" id="works">
+  <h2 class="works__title"><span class="split">SELECTED</span><span class="split">WORKS</span></h2>
+  <div class="works__grid" id="worksGrid"></div>
+</section>
+
+<section class="stack" aria-label="Technologies">
+  <div class="marquee marquee--logos"><div class="marquee__track" id="skillMarquee"></div></div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="contact__title">Have a project <em>in mind?</em></h2>
+  <div class="contact__cols">
+    <div>
+      <ul class="contact__list" id="contactList"></ul>
+      <aside class="card" aria-label="Profile"><img src="assets/images/portrait.jpg" alt="" width="64" height="64" loading="lazy"><div><b data-bind="name"></b><span data-bind="role"></span></div></aside>
+    </div>
+    <form id="form" method="POST" accept-charset="UTF-8" novalidate>
+      <label>Name<input name="name" autocomplete="name" required><small class="err"></small></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required><small class="err"></small></label>
+      <label>Subject<input name="subject"></label>
+      <label>Message<textarea name="message" rows="5" required></textarea><small class="err"></small></label>
+      <label class="honeypot" aria-hidden="true">Website<input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+      <input type="hidden" name="_template" value="table">
+      <button class="btn btn--lime" type="submit">Send message</button>
+      <p class="form__status" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <ul><li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#works">Works</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact</a></li></ul>
+    <button class="top top--big" data-top aria-label="Scroll to top">↑</button>
+    <p>© 2026 <span data-bind="name"></span><br>All rights reserved.</p>
+  </div>
+  <p class="footer__giant" aria-hidden="true" data-bind="nameUp"></p>
+</footer>
+
+<button class="top top--float" id="toTop" aria-label="Back to top">↑</button>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle" hidden></div>
+
+<script src="js/data.js"></script><script src="js/animations.js"></script><script src="js/main.js"></script>
+</body>
+</html>
